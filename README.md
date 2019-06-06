@@ -21,3 +21,10 @@ The structure of GRU is:
 
 The final result of classification can be shown in this way:
 ![image](https://github.com/FlamingJay/Time-related-Intrusion-Detection-Model-based-on-Recurrent-Neural-Network/blob/master/figure/wave_1.png)
+
+
+Well, this paper is now under check. So if anybody wants to use this method or this model, please contact the author @
+
+heuwangjie@hrbeu.edu.cn
+
+Likewise, if there is any question, please help to check and fix. Thanks.
