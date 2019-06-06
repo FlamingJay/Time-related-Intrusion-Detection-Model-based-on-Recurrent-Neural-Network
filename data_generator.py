@@ -69,10 +69,10 @@ sSAE_encoder.layers[6].set_weights(autoencoder_3.layers[3].get_weights())  # thi
 encoded_train = sSAE_encoder.predict(train)
 encoded_test = sSAE_encoder.predict(test)
 
-np.save('data/100_encoded_train.npy', encoded_train)
-np.save('data/100_train_label.npy', train_label)
-np.save('data/100_encoded_test.npy', encoded_test)
-np.save('data/100_test_label.npy', test_label)
+np.save('data/encoded_train.npy', encoded_train)
+np.save('data/train_label.npy', train_label)
+np.save('data/encoded_test.npy', encoded_test)
+np.save('data/test_label.npy', test_label)
 
 # 级联两层Dense 最后加一个softmax
 mlp0 = Dense(units=32, activation='relu')(sSAE_encoder.output)
