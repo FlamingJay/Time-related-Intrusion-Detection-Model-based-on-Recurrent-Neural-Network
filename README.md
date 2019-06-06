@@ -28,3 +28,16 @@ Well, this paper is now under check. So if anybody wants to use this method or t
 heuwangjie@hrbeu.edu.cn
 
 Likewise, if there is any question, please help to check and fix. Thanks.
+本实验主要完成以下内容：
+1.构建一个稀疏自编码器，完成降维任务
+2.构建LSTM（GRU、双向LSTM、双向GRU），完成数据特征挖掘
+3.最后以一个sigmoid神经元完成二分类任务，以binary_crossentropy作为衡量指标
+
+预期：
+1.不同DAE结构，对于分类的影响。
+    这个过程实际为pre-training过程，以DAE+单步LSTM（GRU及双向）结构完成任务
+    最终确定所需参数，包括DAE神经元个数以及稀疏系数rho的确定，需要给出一个表table
+2.不同LSTM、GRU及双向，共4个的对比
+    这个过程实际为fine-tuning过程，以不同步数+结构完成任务
+    最终确定最优的结构，包括选用的cell是什么以及步数的确定，需要给出一个图figure（4条曲线，在不同步数的准确率和虚警率对比）
+3.选出最优结构，然后进行test一维图的显示，figure
