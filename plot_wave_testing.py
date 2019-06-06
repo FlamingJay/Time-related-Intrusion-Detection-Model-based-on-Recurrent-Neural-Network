@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 
 # Two signals with a coherent part at 10Hz and a random part
-s1 = np.load('data/test_label.npy')
+s1 = np.load('data/plot_original.npy')
 s2 = np.load('data/plot_prediction.npy')
 test_pred = s2 > 0.5
 index_same = np.argwhere(s1 == test_pred)
