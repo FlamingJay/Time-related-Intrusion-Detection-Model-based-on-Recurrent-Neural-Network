@@ -69,10 +69,10 @@ sSAE_encoder.layers[6].set_weights(autoencoder_3.layers[3].get_weights())  # thi
 encoded_train = sSAE_encoder.predict(train)
 encoded_test = sSAE_encoder.predict(test)
 
-np.save('F:/GlobalCOM/Final/data/100_encoded_train.npy', encoded_train)
-np.save('F:/GlobalCOM/Final/data/100_train_label.npy', train_label)
-np.save('F:/GlobalCOM/Final/data/100_encoded_test.npy', encoded_test)
-np.save('F:/GlobalCOM/Final/data/100_test_label.npy', test_label)
+np.save('data/100_encoded_train.npy', encoded_train)
+np.save('data/100_train_label.npy', train_label)
+np.save('data/100_encoded_test.npy', encoded_test)
+np.save('data/100_test_label.npy', test_label)
 
 # 级联两层Dense 最后加一个softmax
 mlp0 = Dense(units=32, activation='relu')(sSAE_encoder.output)
@@ -96,10 +96,10 @@ tbCallBack = TensorBoard(log_dir='./logs', histogram_freq=0, write_graph=True, w
                          write_images=True, embeddings_freq=0, embeddings_layer_names=None, embeddings_metadata=None)
 reduc_lr = ReduceLROnPlateau(monitor='val_acc', patience=10, mode='max', factor=0.2, epsilon=0.0001)
 
-train_label_two = np.load('F:/GlobalCOM/20190317/saved_models3/train_label.npy')
-test_label_two = np.load('F:/GlobalCOM/20190317/saved_models3/test_label.npy')
+train_label_two = np.load('saved_models3/train_label.npy')
+test_label_two = np.load('saved_models3/test_label.npy')
 history = classifier.fit(train, train_label_two, epochs=100, batch_size=1024, validation_data=(test, test_label_two), callbacks=[checkpoint, tbCallBack, reduc_lr], verbose=2)
-classifier.load_weights('F:/GlobalCOM/Final/saved_models_temp/best_model.hdf5')
+classifier.load_weights('saved_models_temp/best_model.hdf5')
 # 保存下最好的模型，然后重新构建一个模型，毕竟这里只是一个预训练的过程。
 # 然后，在后面的过程中，首先使用的AE，并且对结果进行TimesereisGenerator
 # 最后，输入到LSTM中实现分类。
