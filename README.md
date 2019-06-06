@@ -28,6 +28,8 @@ Well, this paper is now under check. So if anybody wants to use this method or t
 heuwangjie@hrbeu.edu.cn
 
 Likewise, if there is any question, please help to check and fix. Thanks.
+
+
 本实验主要完成以下内容：
 1.构建一个稀疏自编码器，完成降维任务
 2.构建LSTM（GRU、双向LSTM、双向GRU），完成数据特征挖掘
