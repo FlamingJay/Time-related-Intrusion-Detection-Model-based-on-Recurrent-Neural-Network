@@ -77,6 +77,8 @@ train_label_original = train_label_[(time_steps-1):-2, :]
 test_probabilities = classifier.predict_generator(test_generator, verbose=1)
 test_pred = test_probabilities > 0.5
 test_label_original = test_label_[(time_steps-1):-2, ]
+np.save('data/plot_prediction.npy', test_pred)
+np.save('data/plot_original.npy', test_label_original)
 # tn, fp, fn, tp = confusion_matrix([0, 1, 0, 1], [1, 1, 1, 0]).ravel()
 from sklearn.metrics import confusion_matrix, classification_report
 print('Trainset Confusion Matrix')
