@@ -6,14 +6,12 @@ from keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau, T
 from keras.optimizers import Adam
 import os
 # 加载数据
-Already_Train = True
-if Already_Train:
-    train_all = np.load('F:/GlobalCOM/20190317/saved_models3/encoded_train.npy')  # (175341, 32)
-    train_all_label = np.load('F:/GlobalCOM/20190317/saved_models3/train_label.npy')  # (175341, 1)
-    test_all = np.load('F:/GlobalCOM/20190317/saved_models3/encoded_test.npy')
-    test_all_label = np.load('F:/GlobalCOM/20190317/saved_models3/test_label.npy')
-else:
-    pass
+
+train_all = np.load('data/encoded_train.npy')  # (175341, 32)
+train_all_label = np.load('data/train_label.npy')  # (175341, 1)
+test_all = np.load('data/encoded_test.npy')
+test_all_label = np.load('data/test_label.npy')
+
 
 # 利用TimesereisGenerator生成序列数据
 time_steps = 1
