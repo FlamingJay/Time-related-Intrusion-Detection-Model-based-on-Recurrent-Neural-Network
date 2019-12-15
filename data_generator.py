@@ -10,7 +10,7 @@ from keras.layers import LSTM, Reshape, Dropout
 import os
 # load data
 print("Load data...")
-train, train_label, test, test_label = load_data(True)
+train, train_label, test, test_label = load_data()
 print("train shape: ", train.shape)
 train_label = train_label.reshape((-1, 1))
 test_label = test_label.reshape((-1, 1))
