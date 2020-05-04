@@ -7,7 +7,7 @@ def load_data():
     # Default values.
     train_set = 'data/UNSW_NB15_training-set.csv'
     test_set = 'data/UNSW_NB15_testing-set.csv'
-    train = pd.read_csv(train_set, index_col='id')
+    train = pd.read_csv(train_set, index_col='id') //读入数据
     test = pd.read_csv(test_set, index_col='id')
 
     # 二分类数据
